@@ -30,7 +30,7 @@ module AutomationFramework
 
     def launch_app(url)
       visit url
-      web_status_code(url)
+      # web_status_code(url)
     end
 
     def web_status_code(url)
