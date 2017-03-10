@@ -8,5 +8,4 @@ class GoogleLandingPage < AutomationFramework::Utilities
   def click_search
     page.click_on 'Google Search'
   end
-
 end
