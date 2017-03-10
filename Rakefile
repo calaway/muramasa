@@ -41,7 +41,7 @@ end
 
 multitask :oct_web_local_all => [
     :oct_web_qa,
-    :oct_web_stage,
+    :oct_web_dev,
     :oct_web_prod
 ] do
   puts 'Tested OCT Web All Environments'
@@ -90,7 +90,7 @@ end
 
 multitask :google_web_local_all => [
     :google_web_qa,
-    :google_web_stage,
+    :google_web_dev,
     :google_web_prod
 ] do
   puts 'Tested Google Web All Environments'

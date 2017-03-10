@@ -30,7 +30,7 @@ module AutomationFramework
 
     def launch_app(url)
       visit url
-      web_status_code(url)
+      # web_status_code(url)
     end
 
     def web_status_code(url)
@@ -68,6 +68,12 @@ module AutomationFramework
         switchtonewlyopenedwindow
         count -= 1
       end
+    end
+
+    def resize_window(width: nil, height: nil)
+      width  ||= current_window.size[0]
+      height ||= current_window.size[1]
+      current_window.resize_to(width, height)
     end
 
     def verify_page_content(content)
