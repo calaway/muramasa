@@ -1,77 +1,37 @@
 # Muramasa
-Sample Ruby Automated Regression/Integration Tests
+Muramasa is a coding challenge in two assignments. The original repo that the challenge was initiated from can be found [here](https://github.com/berrynorth/muramasa). The assignments (copied from [assignments.txt](https://raw.githubusercontent.com/calaway/muramasa/d95ef17864bd3d97810a51d26af8ae01adb784f6/assignments.txt)) are:
 
-##What is this?
-    This is a repository to store our rspec/capybara automated Regression/Integration test cases.
+1. Create a single script that will click each menu item on the O.C. Tanner site and validate that you land on the appropriate page.
 
-##How to install:
-<p>Prerequesites</p>
-1. Make sure XCode is installed and up to date
-2. Install XCode command line tools: $xcode-select --install
-3. Install Brew: $ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-4. Install git: $brew install git
-5. Clone the Muramasa github project: $git clone https://github.com/berrynorth/muramasane 
-6. run `bin/setup`
-7. Update (profile) file with the following:
-<br>export PATH="$HOME/.rbenv/bin:$PATH"
-<br>eval "$(rbenv init -)"
-8. Install an IDE (Rubymine or Sublime)  Debugging is easier in Rubymine
+2. Create a script that does a google search for Muramasa.  Finds the wikipedia result and clicks it. Then from the wikipedia page capture his birthdate into a variable and print Muramasa's birthday to the console.
 
-<p>dotenv environment files</p>
-1. Copy the .env, .env.dev, .env.qa and .env.production and rename them with .local at the end of each rspected file. ie: .env.local, .env.dev.local... etc
-2. Uncomment the values in the *.local files and update them with the correct information.
+The boilerplate setup for this was geared toward running code via rspec tests. I used this to my advantage by writing my scripts for the assignments as tests. The scripts can be run from your terminal with the following commands.
 
-<p>Running Test</p>
-1. run in sequence: $rspec spec/features/[test dir/test name]
-2. run in parallel: $parallel_rspec spec/features/[test dir/]
+###### Setup:  
+*(If you have problems getting this to run, please review the prerequisites section below.)*
+```shell
+$ git clone git@github.com:calaway/muramasa.git
+$ cd muramasa
+$ bundle install
+```
 
-<p>PA Rake Commands</p>
-- $rake oct_web_prod (runs all web test locally in prod environment)
-- $rake oct_web_qa (runs all web test locally in qa environment)
-- $rake oct_web_dev (runs all web test locally in dev environment)
-- $rake oct_web_local_all (runs all web test in all environments locally)
-- $rake google_web_prod (runs all web test locally in prod environment)
-- $rake google_web_qa (runs all web test locally in qa environment)
-- $rake google_web_dev (runs all web test locally in dev environment)
-- $rake google_web_local_all (runs all web test in all environments locally)
+###### Assignment 1:
+```shell
+$ rspec spec/features/oc_tanner/web_test/assignment_1_spec.rb
+```
 
+###### Assignment 2:
+```shell
+$ rspec spec/features/google/web_test/assignment_2_spec.rb
+```
 
-<p>Standards:</p>
-1. First and foremost we follow the same standards as everyone else here at O.C. Tanner. Currently this is the [Github Ruby Style Guides] (https://github.com/octanner/ruby)
-2. Use the Rubocop Gem to verify these standards are met:
-    a. from the command line run $rubocop
-    b. rubocop can be ran at a project or file level
-    c. to run at a file level $rubocop /filepath/filename.rb
+## Notes:
+It is not possible to complete assignment 2 as the instructions are written, since the [Wikipedia page on Muramasa](https://en.wikipedia.org/wiki/Muramasa) does not have his birthday. In order to demonstrate my ability to complete the challenge I took the liberty of making up and solving a different, but equally difficult, problem, as stated here with changes in __bold__:
+> "Create a script that does a google search for Muramasa.  Finds the wikipedia result __for the Nintendo game 'Muramasa: The Demon Blade'__ and clicks it. Then from the wikipedia page capture __it's release date__ into a variable and print __the game's release date__ to the console."
 
-<p>Repo</p>
-1. One Repo
-2. Broken up by Project
-3. Own spec files
+Regarding problem 1, I assume the challenge is asking for the script to navigate through the 6 menu options of the desktop version of the website (rather than mobile), so that's what I built it to do.
 
-<p>Tools:</p>
-1. We use Ruby as much as we can.
-2. Our test harness is 'rspec'
-3. For tests we use Capybara
+If you see any problem with this or anything else, please let me know and I will work to demonstrate my proficiency in any way I can.
 
-<p>Drivers</p>
-1. Webkit
-2. Selenium
-
-<p>Structure</p>
-1. Object oriented programming.
-2. Model our Pages/Features in Classes.
-3. Reusable Methods to handle repeated scenarios.
-
-<p>Helpful Info, Additional Resources</p>
-
-There may be additional latency when using a remote webdriver to run tests on Sauce Labs. Timeouts or Waits may need to be increased.
-[Selenium tips regarding explicit waits](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Explicit+Waits)
-
-[Sauce Labs Documentation](https://wiki.saucelabs.com/)
-[SeleniumHQ Documentation](http://www.seleniumhq.org/docs/)
-[RSpec Documentation](http://rspec.info/documentation/)
-[Capybara Documentation](https://github.com/jnicklas/capybara)
-[Ruby Documentation](http://ruby-doc.org/)
-
-A great resource to search for issues not explicitly covered by documentation.
-[Stack Overflow](http://stackoverflow.com/)
+## Prerequesites
+Additional prerequisites to run this code and more information can be found in the [original README](https://github.com/calaway/muramasa/blob/b6dbc357a9f7d99c5bebc6a872ad1895a177d846/README.md). You only need to refer to this if you have trouble getting the above code to run.
