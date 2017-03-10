@@ -18,6 +18,7 @@ feature test_name.to_s, sauce: app.sauce do
     app.launch_app(app.url('OCT'))
 
     # Resizing the window to the "desktop" breakpoint is required to get the text of the menu items
+    original_width = current_window.size[0]
     app.resize_window(width: 1100)
     expect(current_window.size[0]).to eq 1100
 
@@ -29,6 +30,8 @@ feature test_name.to_s, sauce: app.sauce do
       expect(current_url).to eq EXPECTED_DESKTOP_MENU_ITEMS[desktop_menu_item]
     end
 
+    # Revert window size so this won't affect other tests
+    app.resize_window(width: original_width)
     app.close_all_windows
   end
 end

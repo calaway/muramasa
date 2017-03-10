@@ -11,7 +11,8 @@ feature test_name.to_s, sauce: app.sauce do
     app.google_landing_page.navigate_to_wikipedia
     expect(current_url).to eq 'https://en.wikipedia.org/wiki/Muramasa:_The_Demon_Blade'
 
-    expect(app.google_landing_page.find_release_date).to eq 'April 9, 2009'
+    release_date = app.google_landing_page.find_release_date
+    expect(release_date).to eq 'April 9, 2009'
 
     expect { app.google_landing_page.print_release_date }.to output("April 9, 2009\n").to_stdout
 
