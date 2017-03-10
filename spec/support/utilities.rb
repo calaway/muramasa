@@ -70,6 +70,12 @@ module AutomationFramework
       end
     end
 
+    def resize_window(width: nil, height: nil)
+      width  ||= current_window.size[0]
+      height ||= current_window.size[1]
+      current_window.resize_to(width, height)
+    end
+
     def verify_page_content(content)
       expect(page).to_not have_content('HTTP Status')
       expect(page.body).to have_content(content)
