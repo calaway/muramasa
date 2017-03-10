@@ -6,6 +6,6 @@ class GoogleLandingPage < AutomationFramework::Utilities
   end
 
   def click_search
-    page.click_on 'Google Search'
+    page.click_on 'Search'
   end
 end
