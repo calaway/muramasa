@@ -21,8 +21,6 @@ milestones/results
 .DS_Store
 spec/.DS_Store
 spec/helpers/.DS_Store
-.env.local
-.env.*.local
 
 # YARD artifacts
 .yardoc
