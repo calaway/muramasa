@@ -2,4 +2,4 @@ Style/FileName:
   Enabled: false
 
 LineLength:
-  Max: 120
+  Max: 100
